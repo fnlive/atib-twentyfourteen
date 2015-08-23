@@ -16,7 +16,7 @@ add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
 function remove_xmlrpc_pingback_ping( $methods ) {
    unset( $methods['pingback.ping'] );
    return $methods;
-} 
+}
 
 /**
  * Set up the content width value based on the theme's design.
@@ -32,7 +32,7 @@ $content_width = 650;
 // http://www.daretothink.co.uk/blog/change-default-wordpress-email-address/
 add_filter('wp_mail_from', 'new_mail_from');
 add_filter('wp_mail_from_name', 'new_mail_from_name');
- 
+
 function new_mail_from($old) {
 return 'kontakt@annikaochtorkeliberg.se';
 }
@@ -48,43 +48,25 @@ return 'Släktföreningen Annika och Torkel i Berg';
   // 'hide_empty' => 0
   // );
 // $categories = get_categories($args);
-  // foreach($categories as $category) { 
+  // foreach($categories as $category) {
     // $out .=  '<div style="float: left; width:100%;">' . "\n";
     // $out .=  '  <div style="float: left; width: 35%;"><p><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p></div> ' . "\n";
     // $out .=  '  <div style="float: left; width: 45%;"><p>' . $category->description . '</p></div>' . "\n";
-    // $out .=  '  <div style="float: left; width: 10%; height: 100%; text-align: right;"><p>('. $category->count . ')</p></div>' . "\n";  
+    // $out .=  '  <div style="float: left; width: 10%; height: 100%; text-align: right;"><p>('. $category->count . ')</p></div>' . "\n";
 	// $out .=  '</div>' . "\n";
-	// } 
+	// }
 // return $out;
 // }
 // add_shortcode('atiblistcategories', 'atib_list_categories');
 
 
-// function atib_list_categories_simple() {
-  // $list = wp_list_categories("echo=0&orderby=name&show_count=1&hide_empty=0&title_li=");
-  // return $list;
-// }
-// add_shortcode('atiblistcategoriessimple', 'atib_list_categories_simple');
-
-// function atib_list_tags_simple() {
-  // $list = wp_tag_cloud('echo=0&number=0&format=flat&order=ASC&orderby=name'); 
-  // return $list;
-// }
-// add_shortcode('atiblisttagssimple', 'atib_list_tags_simple');
-
-// function atib_list_monthly_archive() {
-  // $list = wp_get_archives('echo=0&type=monthly&format=html');
-  // return $list;
-// }
-// add_shortcode('atiblistmonthlyarchive', 'atib_list_monthly_archive');
-
 // Shortcode to display login form for non-logged in users
 // Behöver  egentligen kompletteras med "Glömt lösenord, registrera konto". wp_loginout verkar lite bättre då.
 // https://pippinsplugins.com/wordpress-login-form-short-code/
-// Om använd, lägg ev till nedan css för att få "Username" och ruta på olika rader. 
-// Lite halvful styling, borde går göra på något snyggare sättt. 
+// Om använd, lägg ev till nedan css för att få "Username" och ruta på olika rader.
+// Lite halvful styling, borde går göra på något snyggare sättt.
 /* Username wrapper paragraph. */
-// .login-username {	
+// .login-username {
   // width: 40%;
 // }
 // /* Password wrapper paragraph. */
@@ -92,11 +74,11 @@ return 'Släktföreningen Annika och Torkel i Berg';
   // width: 40%;
 // }
 function atib_login_form_shortcode( $atts, $content = null ) {
- 
+
 	extract( shortcode_atts( array(
       'redirect' => ''
       ), $atts ) );
- 
+
 	if (!is_user_logged_in()) {
 		if($redirect) {
 			$redirect_url = $redirect;
@@ -104,7 +86,7 @@ function atib_login_form_shortcode( $atts, $content = null ) {
 			$redirect_url = get_permalink();
 		}
 		$form = wp_login_form(array('echo' => false, 'redirect' => $redirect_url, 'value_remember' => true ));
-	} 
+	}
 	return $form;
 }
 add_shortcode('atib_loginform', 'atib_login_form_shortcode');
@@ -168,7 +150,7 @@ if ( has_post_thumbnail( $post->ID ) ){
 }
 return $content;
 }
- 
+
 add_filter('the_excerpt_rss', 'featuredtoRSS');
 add_filter('the_content_feed', 'featuredtoRSS');
 
