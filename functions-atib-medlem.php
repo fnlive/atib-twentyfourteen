@@ -3,9 +3,9 @@
 // Innehåller funktioner för medlemsinnehåll
 
 // Begränsa åtkomst till medlemsinnehåll
-// Returnera sidan "ej_medlem_content.php" om användaren inte är behörig 
+// Returnera sidan "ej_medlem_content.php" om användaren inte är behörig
 // till att "visa_medlems_innehall" och sidan som vill se är skyddad (listad nedan).
-// Skyddade sidor: 
+// Skyddade sidor:
 // - "Single post" med CPT 'slakt_handelser'
 // - arkiv med CPT 'slakt_handelser'
 // - taxonomi-arkiv 'slakt-gren', 'handelse-typ' som hör till CPT 'slakt_handelser'
@@ -48,7 +48,7 @@ function atib_search_filter($query) {
 add_filter( 'pre_get_posts', 'atib_search_filter' );
 
 
-// Visa bara verktygsraden för adminstrator, 
+// Visa bara verktygsraden för adminstrator,
 // ej för andra inloggade användare.
 add_action('after_setup_theme', 'remove_admin_bar');
 
@@ -80,9 +80,9 @@ function atib_medlem_widgets_init() {
 
 
 
-// Funktioner nedanför används till släktträdet. 
+// Funktioner nedanför används till släktträdet.
 //
-// Add Shortcode. Shortcode skapar länk till personakt i släktträdet. 
+// Add Shortcode. Shortcode skapar länk till personakt i släktträdet.
 // Kan användas i inlägg och på sidor genom att sätta kort-koden runt ett namn.
 // Ange namn på personaktsfil som parameter p. Namn finns i filen gendex.txt
 // Användning: [atib_person p=p2592929b]Anna Moberg[/atib_person]
@@ -104,7 +104,7 @@ return '<a title="Personakt visas i nytt fönster" href="'.$url.'/slakttrad/?p='
 }
 add_shortcode( 'atib_person', 'atib_slakttrad_person' );
 
-// Add Quicktag (knapp) till text-editorn 
+// Add Quicktag (knapp) till text-editorn
 // skapar en shortcode med personakt i släktträdet. Se shortcode nedan.
 // Markera en text i texteditorn och tryck sedan på knappen "person"
 function person_quicktags() {
@@ -119,10 +119,12 @@ function person_quicktags() {
 // Hook into the 'admin_print_footer_scripts' action
 add_action( 'admin_print_footer_scripts', 'person_quicktags' );
 
+//ToDo: Skapa knapp som ovan fast till TinyMCE
+//
 
 // Extra medlemsinformation i användarprofilen
 // Lägg till släkt-gren som metadata under user profle
-// 
+//
 add_action( 'show_user_profile', 'atib_show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'atib_show_extra_profile_fields' );
 
@@ -134,10 +136,10 @@ function atib_show_extra_profile_fields( $user ) { ?>
 		<tr>
 			<th><label for="slaktgren">Släktgren</label></th>
 			<td>
-			
-			            <?php 
+
+			            <?php
             //get dropdown saved value
-            $selected = get_the_author_meta( 'slaktgren', $user->ID ); 
+            $selected = get_the_author_meta( 'slaktgren', $user->ID );
             ?>
             <select name="slaktgren" id="slaktgren">
                 <option value="" <?php echo ($selected == "")?  'selected="selected"' : ''; ?>>Ej vald</option>
@@ -150,7 +152,7 @@ function atib_show_extra_profile_fields( $user ) { ?>
                 <option value="Ej ättling" <?php echo ($selected == "Ej ättling")?  'selected="selected"' : ''; ?>>Ej ättling</option>
             </select>
             <span class="description">Välj släktgren</span>
-			
+
 			</td>
 		</tr>
 	</table>
@@ -167,6 +169,3 @@ function atib_save_extra_profile_fields( $user_id ) {
 	/* Copy and paste this line for additional fields. */
 	update_usermeta( $user_id, 'slaktgren', $_POST['slaktgren'] );
 }
-
-
-
