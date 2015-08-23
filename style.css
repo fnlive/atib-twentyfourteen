@@ -1,0 +1,72 @@
+/*
+ Theme Name:   Twenty Fourteen Child
+ Theme URI:    http://example.com/twenty-fourteen-child/
+ Description:  Twenty Fourteen Child Theme
+ Author:       Fredrik Nilsson
+ Author URI:   
+ Template:     twentyfourteen
+ Version:      1.0.0
+ Tags:         light, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-fourteen-child
+*/
+
+
+
+
+@import url("../twentyfourteen/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+/* Större font i huvud-menyn . */
+.primary-navigation a {
+    font-size: 14px;
+}
+
+/* Fixa till footer */
+/* Bakgrundsbild i footer*/
+.site-footer{
+	background-image:url('logo-1015x546-TransparentGrayQuant16.png');
+	background-size: contain;
+	background-repeat:no-repeat;
+	background-position:90% 90%; 
+}
+/* Större font på widget titel i footer */
+.footer-sidebar .widget .widget-title{
+	font-size: 14px;
+}
+/* Större font på länkar i footer */
+.footer-sidebar a  {
+	font-size: 15px;
+}
+
+/* Skapa mall för ljusblå bakgrund bakom stadgarna. 
+ * Använd genom <div class="stadgar">...Stadgetext...</div> under "Text flik".
+ */
+.stadgar  {
+   background-color: #E7F0F3;
+   border-radius: 50px;
+   padding: 30px;
+   margin: 20px;
+   /*line-height: 1*/
+}
+
+/* Skapa mindre avstånd mellan styckena i stadgarna
+ * Använd genom <div id="stadgar">...</div> */
+#stadgar p {margin-bottom: 10px !important;}
+
+/* Pullquote: Använd t.ex. tillsamans med 
+ * <aside><blockquote class="pullquote">...</blockquote></aside>
+ */
+.pullquote {
+	 color: #767676;
+	 font-size: 24px;	
+	 font-style: italic;
+	 margin: 24px 40px;
+	 font-weight: 300;
+	 line-height: 1.2;
+ }
+
+.ingress {
+	font-weight: lighter; 
+	font-size: 135%;
+ }

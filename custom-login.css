@@ -1,0 +1,64 @@
+/*
+ * Our Custom Login Page Stylesheet
+ */
+
+/* The background
+ * This can be image or color, note the !important at the end.
+ */
+body {
+	background-color:#ffffff !important;
+	}
+
+/* Title image (The "WordPress Logo") Must use image as a Background!
+ * Remember to update the height and width your image's dimensions 
+ */
+#login h1 a {	
+	background:url(logo-300x161.png) 0 0 no-repeat;
+	width:300px;
+	height:161px;
+	}
+
+/* The Form  ( The login box )
+ * Background color, border, shadow, etc..
+ */
+#login form {
+	background-color:#D7E5B7;
+	}
+
+/* The Login Fields
+ * Username and Password
+ */
+#login .input {
+	background-color:#F1F1F1;
+	}
+
+/* The Labels
+ * The text above the fields
+ */
+#login label {
+	color:#000;
+	font-size:15px;
+	font-size:1.5rem;
+	}
+/*
+ * The Submit Button
+ */
+#login input[type=submit] {
+	color:#000;
+	background-color:#5EBAD6;
+	border-radius:0px;
+	border:none;
+	border-bottom:4px solid #388CA5;
+	}
+
+#login input[type=submit]:active {}	
+		
+/*
+ * The Back to blog and Forgot Password link
+ */
+#nav a,
+#backtoblog a {
+	color:#000 !important;
+	font-size:110%;
+	}
+	
