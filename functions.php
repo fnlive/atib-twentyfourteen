@@ -1,9 +1,5 @@
 <?php //Opening PHP tag
 
-
-include 'functions-atib-medlem.php';
-include 'functions-atib-slakt_handelser.php';
-
 // Set Favicon link in header.
 function favicon_link() {
     echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />' . "\n";
