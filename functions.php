@@ -14,6 +14,24 @@ function remove_xmlrpc_pingback_ping( $methods ) {
    return $methods;
 }
 
+// Add support for naming guest author
+// http://www.wpbeginner.com/wp-tutorials/how-to-rewrite-guest-author-name-with-custom-fields-in-wordpress/
+// add a custom field called guest-author and it will replace
+// the author’s name with the text that you put in that custom field.
+add_filter( 'the_author', 'guest_author_name' );
+add_filter( 'get_the_author_display_name', 'guest_author_name' );
+
+function guest_author_name( $name ) {
+global $post;
+
+$author = get_post_meta( $post->ID, 'guest-author', true );
+
+if ( $author )
+$name = $author;
+
+return $name;
+}
+
 /**
  * Set up the content width value based on the theme's design.
  * Set $content_width same as in "max content max width" in plugin Fourteen Extended?
