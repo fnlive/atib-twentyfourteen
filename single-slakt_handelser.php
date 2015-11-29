@@ -34,9 +34,9 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 	<div id="content-sidebar" class="content-sidebar widget-area" role="complementary">
-		<?php 
+		<?php
 			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('atib-medlem-sidebar-1') ) :
-			endif; 
+			endif;
 		?>
 	</div><!-- #content-sidebar -->
 

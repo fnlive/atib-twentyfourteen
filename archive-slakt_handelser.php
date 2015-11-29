@@ -40,10 +40,10 @@ get_header(); ?>
 
 						elseif ( is_tax( 'slakt-gren' ) ) :
 							echo("Släkthändelser för ");
-							echo get_the_term_list( $post->ID, 'slakt-gren', '', ', ', '' ); 
+							echo get_the_term_list( $post->ID, 'slakt-gren', '', ', ', '' );
 
 						elseif ( is_tax( 'handelse-typ' ) ) :
-							echo get_the_term_list( $post->ID, 'handelse-typ', '', ', ', '' ); 
+							echo get_the_term_list( $post->ID, 'handelse-typ', '', ', ', '' );
 
 						else :
 							echo("Arkiv det vanliga!");
@@ -54,7 +54,7 @@ get_header(); ?>
 				</h1>
 			</header><!-- .page-header -->
 			<div class="entry-content">
-				<p>På denna sida hittar du <a href="<?php echo home_url('/slakt-handelser/'); ?>">aktuella släkthändelser</a> såsom födda, döda, vigda, födelsedagar och andra bemärkelsedagar. <a href="<?php echo home_url('/foreningen/kontakt#kontakta-oss');?>">Kontakta föreningen</a> om du vill rapportera in något för att publicera här. Innehållet på denna sida är enbart åtkomligt för betalande medlemmar i släktföreningen. 
+				<p>På denna sida hittar du <a href="<?php echo home_url('/slakt-handelser/'); ?>">aktuella släkthändelser</a> såsom födda, döda, vigda, födelsedagar och andra bemärkelsedagar. <a href="<?php echo home_url('/foreningen/kontakt#kontakta-oss');?>">Kontakta föreningen</a> om du vill rapportera in något för att publicera här. Innehållet på denna sida är enbart åtkomligt för betalande medlemmar i släktföreningen.
 				</p>
 			</div>
 
@@ -84,7 +84,7 @@ get_header(); ?>
 	</section><!-- #primary -->
 	<div id="content-sidebar" class="content-sidebar widget-area" role="complementary">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('atib-medlem-sidebar-1') ) :
-		 
+
 		endif; ?>
 	</div><!-- #content-sidebar -->
 

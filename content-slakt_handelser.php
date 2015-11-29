@@ -12,13 +12,13 @@
  * - archive-slakt_handelser.php
  * - taxonomy-slakt-gren.php
  * - taxonomy-handelse-typ.php
- * - 
+ * -
  *
  * @package WordPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */
- 
+
  /**
  * Print HTML with meta information for the current post-date/time and author.
  * Copied from template-tags.php
@@ -39,7 +39,7 @@ endif;
 
 ?>
 
- <?php // if ( is_user_logged_in()  ) { ?> 
+ <?php // if ( is_user_logged_in()  ) { ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php twentyfourteen_post_thumbnail(); ?>

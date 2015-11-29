@@ -7,7 +7,7 @@
  * Add following below get_sidebar() if we need copyright notice:
 			<aside class="footer-sidebar widget-area masonry" style="padding: 2em; ">
 			Copyright © 2014, Släktföreningen Annika och Torkel i Berg. All rights reserved.
-			</aside> 
+			</aside>
  *
  *
  * @package WordPress
